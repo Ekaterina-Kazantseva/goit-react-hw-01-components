@@ -1,37 +1,21 @@
-import PropTypes from 'prop-types'
+import { Label, Percentage, Stat, Statistics, StatItem, Title } from "./statistic.styled"
+import { getRandomColor } from './RandomColor.js'
+export const Statistic = ({ title, stats }) => {
+    return <Statistics>
+      {title && (
+         <Title>Upload stats</Title>
+       ) }
 
-import {  Title, StatList, StatItem, Label, Percentage } from 'components/Statistic/statistic.styled'
-import { Box } from "components/box";
-import { getRandomColor } from './RandomColor'
-
-
-export const Statistic = ({ stats, title }) => {
-  return <Box
-      width="334px"
-      ml="auto"
-      mr="auto"
-      mb={6}
-      pt={4}
-      bg="white"
-      borderRadius="normal"
-      boxShadow="shadow"
-      as="section">
+      <Stat>
+        {stats.map(each => (
+          
+          <StatItem key={each.id}   style={{backgroundColor:getRandomColor()}}>
+          <Label >{each.label}</Label>
+          <Percentage >{each.percentage}%</Percentage>
+          </StatItem>
+        ))}
     
-      {title && (<Title >Upload stats</Title>)}      
-
-      <StatList>
-          {stats.map(each => (
-              <StatItem key={each.id} style={{backgroundColor:getRandomColor()}}>
-              <Label >{each.label}</Label>
-              <Percentage >{each.percentage}%</Percentage>
-              </StatItem>
-          ))}
-      </StatList>
     
-  </Box>
+  </Stat>
+</Statistics>
 }
-
-Statistic.propTypes = {
-  title: PropTypes.string,
-  stats: PropTypes.array.isRequired,
-};

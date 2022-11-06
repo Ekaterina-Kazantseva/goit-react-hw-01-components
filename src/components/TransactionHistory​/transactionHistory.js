@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { Box } from "components/box";
-import {TH,TR, Thead, Tabledata} from 'components/TransactionHistory/transactionHistory.styled'
+import {TH,TR, Thead, Tabledata} from "components/TransactionHistory​/transactionHistory.styled"
 
 export const TransactionHistory = ({ items }) => {
     return <Box

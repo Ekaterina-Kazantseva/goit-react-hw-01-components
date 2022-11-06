@@ -1,11 +1,11 @@
 import { Profile } from "components/Profile/profile";
 import { Statistic } from "components/Statistic/statistic";
 import { FriendList } from "components/FriendList/friendList";
-import {TransactionHistory} from 'components/TransactionHistory​/transationHistory'
+import {TransactionHistory} from "components/TransactionHistory​/transactionHistory"
 import user from "../json/user.json"
 import data from "../json/data.json"
 import friends from "../json/friends.json"
-import transactions from "../json/transactions.json"
+import transactions from "../json/transaction.json"
 import { Box } from "components/box";
 
 
